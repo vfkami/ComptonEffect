@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38c6fdf7-4243-4357-acb2-950cb2807495" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainScene.unity" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/AnimController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SceneManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/ComptonEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AnimController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iQ5CSYKYYerT8kjTgtv5UsRdfH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38c6fdf7-4243-4357-acb2-950cb2807495" name="Default Changelist" comment="" />
+      <created>1601826850152</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601826850152</updated>
+      <workItem from="1601826865055" duration="3382000" />
+      <workItem from="1601841790974" duration="9890000" />
+      <workItem from="1602029801133" duration="1581000" />
+      <workItem from="1602085236940" duration="5341000" />
+      <workItem from="1602118039235" duration="2938000" />
+      <workItem from="1602173336274" duration="1946000" />
+      <workItem from="1602290278320" duration="12925000" />
+      <workItem from="1602335508396" duration="2120000" />
+      <workItem from="1602377965013" duration="2694000" />
+      <workItem from="1602509230745" duration="5767000" />
+      <workItem from="1602692697226" duration="1411000" />
+      <workItem from="1603047461302" duration="9654000" />
+      <workItem from="1604334125835" duration="12046000" />
+      <workItem from="1604417881682" duration="7063000" />
+      <workItem from="1606926992355" duration="7378000" />
+      <workItem from="1607256979549" duration="20425000" />
+      <workItem from="1607950550672" duration="14706000" />
+      <workItem from="1608129575340" duration="7948000" />
+      <workItem from="1608146165552" duration="972000" />
+      <workItem from="1608147291329" duration="2679000" />
+      <workItem from="1608247600496" duration="3452000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="WindowStateProjectService">
+    <state x="2221" y="251" key="SettingsEditor" timestamp="1607258050703">
+      <screen x="1920" y="174" width="1600" height="870" />
+    </state>
+    <state x="2221" y="251" key="SettingsEditor/0.0.1920.1050/1920.174.1600.870@1920.174.1600.870" timestamp="1607258050703" />
+    <state x="547" y="134" key="run.anything.popup" timestamp="1606929174371">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1144" y="285" key="run.anything.popup/0.0.1920.1050/-1600.174.1600.870@-1600.174.1600.870" timestamp="1601830166568" />
+    <state x="547" y="134" key="run.anything.popup/0.0.1920.1050/-1600.174.1600.870@0.0.1920.1050" timestamp="1604347622352" />
+    <state x="547" y="134" key="run.anything.popup/0.0.1920.1050/1920.174.1600.870@0.0.1920.1050" timestamp="1606929174371" />
+    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup" timestamp="1604421296743">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1137" y="356" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1600.174.1600.870@-1600.174.1600.870" timestamp="1602300475888" />
+    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup/0.0.1920.1050/-1600.174.1600.870@0.0.1920.1050" timestamp="1604421296743" />
+  </component>
+</project>
