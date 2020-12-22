@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" root0="FORCE_HIGHLIGHTING" />
@@ -22,15 +25,16 @@
         <option value="$PROJECT_DIR$/Assets/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ComptonEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1iQ5CSYKYYerT8kjTgtv5UsRdfH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -40,6 +44,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -91,6 +96,8 @@
       <workItem from="1608146165552" duration="972000" />
       <workItem from="1608147291329" duration="2679000" />
       <workItem from="1608247600496" duration="3452000" />
+      <workItem from="1608570389635" duration="4581000" />
+      <workItem from="1608648912721" duration="8160000" />
     </task>
     <servers />
   </component>
@@ -99,7 +106,24 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="714" y="364" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1608654519178">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="714" y="364" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1050@0.0.1920.1050" timestamp="1608654519178" />
     <state x="2221" y="251" key="SettingsEditor" timestamp="1607258050703">
       <screen x="1920" y="174" width="1600" height="870" />
     </state>
@@ -110,10 +134,11 @@
     <state x="-1144" y="285" key="run.anything.popup/0.0.1920.1050/-1600.174.1600.870@-1600.174.1600.870" timestamp="1601830166568" />
     <state x="547" y="134" key="run.anything.popup/0.0.1920.1050/-1600.174.1600.870@0.0.1920.1050" timestamp="1604347622352" />
     <state x="547" y="134" key="run.anything.popup/0.0.1920.1050/1920.174.1600.870@0.0.1920.1050" timestamp="1606929174371" />
-    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup" timestamp="1604421296743">
+    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup" timestamp="1608650397073">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1137" y="356" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1600.174.1600.870@-1600.174.1600.870" timestamp="1602300475888" />
     <state x="556" y="220" width="807" height="819" key="search.everywhere.popup/0.0.1920.1050/-1600.174.1600.870@0.0.1920.1050" timestamp="1604421296743" />
+    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1608650397073" />
   </component>
 </project>
