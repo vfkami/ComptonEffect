@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Globalization;
+using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,11 +10,11 @@ public class UISimulator : MonoBehaviour
 {
     // Canvas Values //
     private double _massa;
+    
     public Dropdown dpdDegree;
-
     public Dropdown dpdFinalColor;
+    
     // ========= Inputs ========= //
-
     public Dropdown dpdInitialColor;
     public Dropdown dpdMass;
     public InputField if_EnFinal;
@@ -20,24 +22,27 @@ public class UISimulator : MonoBehaviour
     public InputField if_HMC;
     public InputField if_Lambdad;
     public InputField if_Lambdaf;
-
     public InputField if_Lambdai;
     public InputField if_MassaField;
+    public GameObject if_AngPhi;
+
     public GameObject lightGO;
+    public GameObject aviso;
 
     public Image pelicula;
     public Toggle tgFinalIv;
-    public Toggle tgFinalUv;
 
-    public Toggle tgInitialIv;
     public Toggle tgInitialUv;
 
     public GameObject window;
+
+    private bool _isEletron;
 
     private void Start()
     {
         pelicula.gameObject.SetActive(false);
         window.SetActive(false);
+        aviso.SetActive(false);
     }
 
     private void Update()
@@ -46,6 +51,9 @@ public class UISimulator : MonoBehaviour
             GameObject.Find("Canvas").GetComponent<CanvasScaler>().scaleFactor = 1.5f;
         
         if(!pelicula.IsActive()) UpdateUiElementsInteractableStatus();
+        
+        if_AngPhi.SetActive(dpdMass.value == 3);
+        VerifyFinalLenght();
     }
 
     private void UpdateUiElementsInteractableStatus()
@@ -54,22 +62,54 @@ public class UISimulator : MonoBehaviour
         if_MassaField.interactable = string.IsNullOrEmpty(if_HMC.text);
         dpdMass.interactable = string.IsNullOrEmpty(if_HMC.text);
 
-        bool interactable = false || string.IsNullOrEmpty(if_EnInicial.text) && string.IsNullOrEmpty(if_EnFinal.text) && String.IsNullOrEmpty(if_Lambdad.text);
-
+        bool interactable =  string.IsNullOrEmpty(if_EnInicial.text) && string.IsNullOrEmpty(if_EnFinal.text);
         if_Lambdai.interactable = interactable;
         if_Lambdaf.interactable = interactable;
         tgFinalIv.interactable = interactable;
-        tgFinalUv.interactable = interactable;
-        tgInitialIv.interactable = interactable;
         tgInitialUv.interactable = interactable;
         dpdInitialColor.interactable = interactable;
         dpdFinalColor.interactable = interactable;
 
-        interactable = false || string.IsNullOrEmpty(if_Lambdai.text) && string.IsNullOrEmpty(if_Lambdaf.text);
-       
+        if (!interactable) return;
+
+        interactable = string.IsNullOrEmpty(if_Lambdai.text) && string.IsNullOrEmpty(if_Lambdaf.text);
         if_EnInicial.interactable = interactable;
         if_EnFinal.interactable = interactable;
-        if_Lambdad.interactable = interactable;
+
+        if_Lambdad.interactable = !(!string.IsNullOrEmpty(if_Lambdai.text) && !string.IsNullOrEmpty(if_Lambdaf.text));
+        if_Lambdai.interactable = !(!string.IsNullOrEmpty(if_Lambdad.text) && !string.IsNullOrEmpty(if_Lambdaf.text));
+        if_Lambdaf.interactable = !(!string.IsNullOrEmpty(if_Lambdad.text) && !string.IsNullOrEmpty(if_Lambdai.text));
+
+
+        
+    }
+    
+
+    private void VerifyFinalLenght()
+    {
+        if (String.IsNullOrEmpty(if_Lambdaf.text) || String.IsNullOrEmpty(if_Lambdai.text)) return;
+
+        double initialValue;
+        double finalValue;
+        
+        double.TryParse(if_Lambdaf.text, out finalValue);
+        double.TryParse(if_Lambdai.text, out initialValue);
+
+        if (finalValue < initialValue)
+        {
+            StartCoroutine(ShowAviso());
+            if_Lambdaf.text = "";
+            dpdFinalColor.value = 0;
+        }
+        
+
+    }
+
+    IEnumerator ShowAviso()
+    {
+        aviso.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        aviso.gameObject.SetActive(false);
     }
 
     public void UpdateMassaFields()
@@ -88,6 +128,7 @@ public class UISimulator : MonoBehaviour
 
                 case 3:
                     _massa = 9.1095e-31;
+                    _isEletron = true;
                     break;
             }
 
@@ -156,44 +197,23 @@ public class UISimulator : MonoBehaviour
     public void UpdateInitialLenghtWithToggles()
     {
         dpdInitialColor.value = 0;
-
-        if (tgInitialIv.isOn)
-        {
-            tgInitialUv.isOn = false;
-            if_Lambdai.text = "1e-4";
-        }
-        else if (tgInitialUv.isOn)
-        {
-            tgInitialIv.isOn = false;
-            if_Lambdai.text = "8,82e-9";
-        }
-
+        if (tgInitialUv.isOn) if_Lambdai.text = "8,82e-9";
+         
         RefreshLengthFieldsInteractableStatus();
     }
 
     public void UpdateFinalLenghtWithToggles()
     {
         dpdFinalColor.value = 0;
+        if (tgFinalIv.isOn) if_Lambdaf.text = "1e-4";
         
-        if (tgFinalIv.isOn)
-        {
-            tgFinalUv.isOn = false;
-            if_Lambdaf.text = "1e-4";
-        }
-        else if (tgFinalUv.isOn)
-        {
-            tgFinalIv.isOn = false;
-            if_Lambdaf.text = "8,82e-9";
-        }
-
         RefreshLengthFieldsInteractableStatus();
     }
 
     private void RefreshLengthFieldsInteractableStatus()
     {
-        var value = !(tgInitialIv.isOn || tgInitialUv.isOn || tgFinalIv.isOn || tgFinalUv.isOn);
+        bool value = !(tgInitialUv.isOn || tgFinalIv.isOn);
 
-        print(value);
         if_Lambdad.interactable = value;
         if_EnFinal.interactable = value;
         if_EnInicial.interactable = value;
@@ -226,20 +246,28 @@ public class UISimulator : MonoBehaviour
 
         switch (dpdDegree.value)
         {
-            case 0:
-                degree = double.NaN;
-                break;
-
             case 1:
-                degree = 30;
+                degree = 180;
                 break;
 
             case 2:
-                degree = 45;
+                degree = 90;
                 break;
 
             case 3:
-                degree = 60;
+                degree = 45;
+                break;
+            
+            case 4:
+                degree = 30;
+                break;
+            
+            case 5:
+                degree = -180;
+                break;
+            
+            default:
+                degree = double.NaN;
                 break;
         }
 
@@ -294,6 +322,7 @@ public class UISimulator : MonoBehaviour
         if_HMC.text = newValues[5].ToString("e2");
         if_EnInicial.text = newValues[6].ToString("e2");
         if_EnFinal.text = newValues[7].ToString("e2");
+        if_AngPhi.GetComponentInChildren<InputField>().text = Math.Round(newValues[8]).ToString(CultureInfo.InvariantCulture);
 
         if_Lambdai.interactable = true;
         if_Lambdaf.interactable = true;

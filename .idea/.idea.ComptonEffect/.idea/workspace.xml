@@ -26,9 +26,9 @@
         <option value="$PROJECT_DIR$/Assets/ComptonEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
       </list>
     </option>
@@ -98,6 +98,7 @@
       <workItem from="1608247600496" duration="3452000" />
       <workItem from="1608570389635" duration="4581000" />
       <workItem from="1608648912721" duration="8160000" />
+      <workItem from="1608728591076" duration="15391000" />
     </task>
     <servers />
   </component>
@@ -134,11 +135,11 @@
     <state x="-1144" y="285" key="run.anything.popup/0.0.1920.1050/-1600.174.1600.870@-1600.174.1600.870" timestamp="1601830166568" />
     <state x="547" y="134" key="run.anything.popup/0.0.1920.1050/-1600.174.1600.870@0.0.1920.1050" timestamp="1604347622352" />
     <state x="547" y="134" key="run.anything.popup/0.0.1920.1050/1920.174.1600.870@0.0.1920.1050" timestamp="1606929174371" />
-    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup" timestamp="1608650397073">
+    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup" timestamp="1608737020355">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1137" y="356" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1600.174.1600.870@-1600.174.1600.870" timestamp="1602300475888" />
     <state x="556" y="220" width="807" height="819" key="search.everywhere.popup/0.0.1920.1050/-1600.174.1600.870@0.0.1920.1050" timestamp="1604421296743" />
-    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1608650397073" />
+    <state x="556" y="220" width="807" height="819" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1608737020355" />
   </component>
 </project>

@@ -5,18 +5,27 @@ using UnityEngine.UI;
 
 public class SceneManager : MonoBehaviour
 {
-    private GameObject _particle;
-    private GameObject _particleParent;
-    
+    public GameObject particle;
+    public GameObject particleParent;
+
+    public GameObject eletron;
+    public GameObject eletronParent;
+
+    private Dropdown _dpdMass;
+
+    private GameObject _animateParticle;
+    private GameObject _animParticleParent;
+
     private Color _final;
     private Color _inicial;
     
     private float _angle = 120;
-    private float _tempo = 2.5f;
+    private float _partAngle;
+    private float _tempo = 2f;
     
     private bool _startButton;
     private bool _anotherTrigger;
-    private bool _isEletron;
+    //private bool _isEletron;
 
     public Canvas mainCanvas;
     
@@ -27,9 +36,12 @@ public class SceneManager : MonoBehaviour
     
     private void Start()
     {
+        _dpdMass = GameObject.Find("DPD_Massa").GetComponent<Dropdown>();
+
         sprLight.GetComponent<SpriteRenderer>().color = Color.white;
-        _particleParent = GameObject.Find("PParent");
-        _particle = GameObject.Find("GO_Particle");
+        particleParent.SetActive(true);
+        eletronParent.SetActive(false);
+
     }
 
     private void Update()
@@ -39,12 +51,16 @@ public class SceneManager : MonoBehaviour
         if (!_anotherTrigger) return;
 
         sprLight.transform.localPosition += new Vector3(0.05f, 0f, 0f);
-        _particle.transform.localPosition += new Vector3(0.05f, 0f, 0f);
-    }
+        _animateParticle.transform.localPosition += new Vector3(0.05f, 0f, 0f);
+        
 
-    public void StartAnimation(double i, double f, float a)
+    }
+    public void StartAnimation(double i, double f, float a, float p)
     {
         _angle = a;
+        if (_dpdMass.value == 3) _partAngle = p;
+        else _partAngle = a;
+        
         SetColor(i, f);
 
         GameObject.Find("StartButton").GetComponent<Button>().interactable = false;
@@ -65,10 +81,10 @@ public class SceneManager : MonoBehaviour
 
         // ----- Shock ----- //
         lightP.transform.Rotate(Vector3.forward, _angle, Space.Self);
-        _particleParent.transform.Rotate(Vector3.forward, -_angle, Space.Self);
+        _animParticleParent.transform.Rotate(Vector3.forward, -_partAngle, Space.Self);
 
         sprLight.GetComponent<SpriteRenderer>().color = _final;
-        sprLight.transform.localScale = new Vector3(0.5f, 0.3f, 0.3f);
+        sprLight.transform.localScale = new Vector3(0.5f, 0.2f, 0.2f);
         _anotherTrigger = true;
 
         // ----- End Animation ----- //
@@ -109,7 +125,6 @@ public class SceneManager : MonoBehaviour
     public void ModifyCollisionByParticleType()
     {
         var massSelector = GameObject.Find("DPD_Massa").GetComponent<Dropdown>();
-        _particle = GameObject.Find("GO_Particle");
 
         switch (massSelector.value)
         {
@@ -122,29 +137,33 @@ public class SceneManager : MonoBehaviour
                 break;
 
             case 3: // eletron
-                _tempo = 1.5f;
-                _isEletron = true;
-                _particleParent = GameObject.Find("EParent");
-                _particle = GameObject.Find("GO_Eletron");
-                _particleParent.transform.position = new Vector3(-2.346f, 0.064f, -9.112f);
+                //_tempo = 1.5f;
+                //_isEletron = true;
+                _animateParticle = eletron;
+                eletronParent.SetActive(true);
+                particleParent.SetActive(false);
+
+                _animParticleParent = eletronParent;
+                _animParticleParent.transform.position = new Vector3(0.37f, -0.1f, -9.112f);
                 return;
         }
 
-        GameObject.Find("EParent").transform.position = new Vector3(3.16f, -0.197f, -9.84f); //default location
+        eletronParent.transform.position = new Vector3(0.37f, -0.1f, -9.112f); //default location
 
-        _tempo = 2.6f;
-        _isEletron = false;
-        _particleParent = GameObject.Find("PParent");
-        _particle = GameObject.Find("GO_Particle");
+        //_tempo = 2.6f;
+        particleParent.SetActive(true);
+        eletronParent.SetActive(false);
+
+        //_isEletron = false;
+        _animParticleParent = particleParent;
+        _animateParticle = particle;
     }
 
     public void SetIsEletron()
     {
-        var massSelector = GameObject.Find("DPD_Massa").GetComponent<Dropdown>();
-        massSelector.value = 3;
+        _dpdMass.value = 3;
         ModifyCollisionByParticleType();
     }
-
 
     public void ReloadScene()
     {

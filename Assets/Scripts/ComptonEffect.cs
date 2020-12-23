@@ -54,12 +54,12 @@ public class ComptonEffect : MonoBehaviour
             Massa = Planck * hmc / Luz;
         }
 
+        var rad = Math.PI / 180 * a;
 
         if (!double.IsNaN(a))
         {
             Angulo = a;
 
-            var rad = Math.PI / 180 * a;
             var calcAngulo = 1 - Math.Cos(rad);
             Delta = hmc * calcAngulo;
 
@@ -101,8 +101,13 @@ public class ComptonEffect : MonoBehaviour
         {
             Angulo = a;
         }
-
-        manager.GetComponent<SceneManager>().StartAnimation(CInicial, CFinal, Convert.ToSingle(Angulo));
-        c.GetComponent<UISimulator>().SetValues(new[] {Angulo, CInicial, CFinal, Delta, Massa, Hmc, EInicial, EFinal});
+        
+        double newRad = (Math.PI / 180) * (Angulo / 2);
+        double cotangent = 1 / Math.Tan(1 + (Planck / Math.Pow(Massa * Luz, 2)) * Math.Tan(newRad));
+        double radPhi = Math.Pow(cotangent, -1);
+        double degPhi = radPhi * (180 / Math.PI);
+            
+        manager.GetComponent<SceneManager>().StartAnimation(CInicial, CFinal, Convert.ToSingle(Angulo), Convert.ToSingle(degPhi));
+        c.GetComponent<UISimulator>().SetValues(new[] {Angulo, CInicial, CFinal, Delta, Massa, Hmc, EInicial, EFinal, degPhi});
     }
 }
