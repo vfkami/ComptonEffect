@@ -103,8 +103,11 @@ public class ComptonEffect : MonoBehaviour
         }
         
         double newRad = (Math.PI / 180) * (Angulo / 2);
-        double cotangent = 1 / Math.Tan(1 + (Planck / Math.Pow(Massa * Luz, 2)) * Math.Tan(newRad));
-        double radPhi = Math.Pow(cotangent, -1);
+        double fstep = (Massa * Luz * CInicial);
+        double sstep = Planck / fstep;
+        double tstep = (1 + sstep) * Math.Tan(newRad);
+        double fistep = 1 / tstep;
+        double radPhi = Math.Atan(fistep);
         double degPhi = radPhi * (180 / Math.PI);
             
         manager.GetComponent<SceneManager>().StartAnimation(CInicial, CFinal, Convert.ToSingle(Angulo), Convert.ToSingle(degPhi));

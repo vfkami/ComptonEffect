@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Globalization;
-using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -52,7 +51,6 @@ public class UISimulator : MonoBehaviour
         
         if(!pelicula.IsActive()) UpdateUiElementsInteractableStatus();
         
-        if_AngPhi.SetActive(dpdMass.value == 3);
         VerifyFinalLenght();
     }
 
@@ -79,9 +77,6 @@ public class UISimulator : MonoBehaviour
         if_Lambdad.interactable = !(!string.IsNullOrEmpty(if_Lambdai.text) && !string.IsNullOrEmpty(if_Lambdaf.text));
         if_Lambdai.interactable = !(!string.IsNullOrEmpty(if_Lambdad.text) && !string.IsNullOrEmpty(if_Lambdaf.text));
         if_Lambdaf.interactable = !(!string.IsNullOrEmpty(if_Lambdad.text) && !string.IsNullOrEmpty(if_Lambdai.text));
-
-
-        
     }
     
 
@@ -164,27 +159,27 @@ public class UISimulator : MonoBehaviour
                 break;
 
             case 1:
-                compInpField.text = "625e-14";
+                compInpField.text = "625e-9";
                 break;
 
             case 2:
-                compInpField.text = "590e-14";
+                compInpField.text = "590e-9";
                 break;
 
             case 3:
-                compInpField.text = "565e-14";
+                compInpField.text = "565e-9";
                 break;
 
             case 4:
-                compInpField.text = "500e-14";
+                compInpField.text = "500e-9";
                 break;
 
             case 5:
-                compInpField.text = "440e-14";
+                compInpField.text = "440e-9";
                 break;
 
             case 6:
-                compInpField.text = "390e-14";
+                compInpField.text = "390e-9";
                 break;
         }
     }

@@ -58,8 +58,7 @@ public class SceneManager : MonoBehaviour
     public void StartAnimation(double i, double f, float a, float p)
     {
         _angle = a;
-        if (_dpdMass.value == 3) _partAngle = p;
-        else _partAngle = a;
+        _partAngle = p;
         
         SetColor(i, f);
 
@@ -101,22 +100,22 @@ public class SceneManager : MonoBehaviour
 
     private Color GetColorByLengthValue(double value)
     {
-        if (value <= 7.90e-12 && value >= 6.25e-12)
+        if (value <= 790e-9 && value >= 625e-9)
             return Color.red;
 
-        if (value <= 6.24e-12 && value >= 5.90e-12)
+        if (value <= 624e-9 && value >= 590e-9)
             return new Color(1, 0.64f, 0);
 
-        if (value <= 5.89e-12 && value >= 5.65e-12)
+        if (value <= 589e-9 && value >= 565e-9)
             return Color.yellow;
 
-        if (value <= 5.64e-12 && value >= 5e-12)
+        if (value <= 564e-9 && value >= 500e-9)
             return Color.green;
 
-        if (value <= 4.99e-12 && value >= 4.40e-12)
+        if (value <= 499e-9 && value >= 440e-9)
             return Color.blue;
 
-        if ((value <= 4.39e-12) & (value >= 3.90e-12))
+        if ((value <= 439e-9) & (value >= 390e-9))
             return new Color(0.6f, 0.2f, 0.6f);
 
         return Color.white;

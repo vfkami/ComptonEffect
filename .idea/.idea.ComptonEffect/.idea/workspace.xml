@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/phicalc.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/MainScene.unity" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -27,8 +28,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" />
+        <option value="$PROJECT_DIR$/Assets/phicalc.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ComptonEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UISimulator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneManager.cs" />
       </list>
     </option>
@@ -99,6 +101,9 @@
       <workItem from="1608570389635" duration="4581000" />
       <workItem from="1608648912721" duration="8160000" />
       <workItem from="1608728591076" duration="15391000" />
+      <workItem from="1609939074820" duration="345000" />
+      <workItem from="1609939496782" duration="37000" />
+      <workItem from="1610016680882" duration="9059000" />
     </task>
     <servers />
   </component>
